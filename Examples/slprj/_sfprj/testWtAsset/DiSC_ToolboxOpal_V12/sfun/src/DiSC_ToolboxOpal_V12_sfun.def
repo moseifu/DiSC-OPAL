@@ -1,3 +1,0 @@
-LIBRARY DiSC_ToolboxOpal_V12_sfun.lib
-EXPORTS
-mexFunction
