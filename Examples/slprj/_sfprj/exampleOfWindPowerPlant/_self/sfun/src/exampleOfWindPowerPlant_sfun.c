@@ -1,7 +1,7 @@
 /* Include files */
 
-#include "testWtAsset_sfun.h"
-#include "testWtAsset_sfun_debug_macros.h"
+#include "exampleOfWindPowerPlant_sfun.h"
+#include "exampleOfWindPowerPlant_sfun_debug_macros.h"
 
 /* Type Definitions */
 
@@ -10,34 +10,35 @@
 /* Variable Declarations */
 
 /* Variable Definitions */
-uint32_T _testWtAssetMachineNumber_;
+uint32_T _exampleOfWindPowerPlantMachineNumber_;
 
 /* Function Declarations */
 
 /* Function Definitions */
-void testWtAsset_initializer(void)
+void exampleOfWindPowerPlant_initializer(void)
 {
 }
 
-void testWtAsset_terminator(void)
+void exampleOfWindPowerPlant_terminator(void)
 {
 }
 
 /* SFunction Glue Code */
-unsigned int sf_testWtAsset_method_dispatcher(SimStruct *simstructPtr, unsigned
-  int chartFileNumber, const char* specsCksum, int_T method, void *data)
+unsigned int sf_exampleOfWindPowerPlant_method_dispatcher(SimStruct
+  *simstructPtr, unsigned int chartFileNumber, const char* specsCksum, int_T
+  method, void *data)
 {
   return 0;
 }
 
-extern void sf_testWtAsset_uses_exported_functions(int nlhs, mxArray * plhs[],
-  int nrhs, const mxArray * prhs[])
+extern void sf_exampleOfWindPowerPlant_uses_exported_functions(int nlhs, mxArray
+  * plhs[], int nrhs, const mxArray * prhs[])
 {
   plhs[0] = mxCreateLogicalScalar(0);
 }
 
-unsigned int sf_testWtAsset_process_check_sum_call( int nlhs, mxArray * plhs[],
-  int nrhs, const mxArray * prhs[] )
+unsigned int sf_exampleOfWindPowerPlant_process_check_sum_call( int nlhs,
+  mxArray * plhs[], int nrhs, const mxArray * prhs[] )
 {
 
 #ifdef MATLAB_MEX_FILE
@@ -56,20 +57,20 @@ unsigned int sf_testWtAsset_process_check_sum_call( int nlhs, mxArray * plhs[],
     mxGetString(prhs[1], commandName,sizeof(commandName)/sizeof(char));
     commandName[(sizeof(commandName)/sizeof(char)-1)] = '\0';
     if (!strcmp(commandName,"machine")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2289351557U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3564565911U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2697415671U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3713510470U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2354963850U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(754792968U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(340743920U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3706360447U);
     } else if (!strcmp(commandName,"exportedFcn")) {
       ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3700446617U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(951737331U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2596833704U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2329505143U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(4262900834U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(391746766U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(4060874576U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(964278289U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -89,10 +90,10 @@ unsigned int sf_testWtAsset_process_check_sum_call( int nlhs, mxArray * plhs[],
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2538477667U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2558778527U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(934123678U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(4153985875U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1726529868U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1278231136U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3530693926U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3448641123U);
   }
 
   return 1;
@@ -105,8 +106,8 @@ unsigned int sf_testWtAsset_process_check_sum_call( int nlhs, mxArray * plhs[],
 
 }
 
-unsigned int sf_testWtAsset_autoinheritance_info( int nlhs, mxArray * plhs[],
-  int nrhs, const mxArray * prhs[] )
+unsigned int sf_exampleOfWindPowerPlant_autoinheritance_info( int nlhs, mxArray *
+  plhs[], int nrhs, const mxArray * prhs[] )
 {
 
 #ifdef MATLAB_MEX_FILE
@@ -143,8 +144,8 @@ unsigned int sf_testWtAsset_autoinheritance_info( int nlhs, mxArray * plhs[],
 
 }
 
-unsigned int sf_testWtAsset_get_eml_resolved_functions_info( int nlhs, mxArray *
-  plhs[], int nrhs, const mxArray * prhs[] )
+unsigned int sf_exampleOfWindPowerPlant_get_eml_resolved_functions_info( int
+  nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[] )
 {
 
 #ifdef MATLAB_MEX_FILE
@@ -178,8 +179,8 @@ unsigned int sf_testWtAsset_get_eml_resolved_functions_info( int nlhs, mxArray *
 
 }
 
-unsigned int sf_testWtAsset_third_party_uses_info( int nlhs, mxArray * plhs[],
-  int nrhs, const mxArray * prhs[] )
+unsigned int sf_exampleOfWindPowerPlant_third_party_uses_info( int nlhs, mxArray
+  * plhs[], int nrhs, const mxArray * prhs[] )
 {
   char commandName[64];
   char tpChksum[64];
@@ -206,8 +207,8 @@ unsigned int sf_testWtAsset_third_party_uses_info( int nlhs, mxArray * plhs[],
   return 1;
 }
 
-unsigned int sf_testWtAsset_jit_fallback_info( int nlhs, mxArray * plhs[], int
-  nrhs, const mxArray * prhs[] )
+unsigned int sf_exampleOfWindPowerPlant_jit_fallback_info( int nlhs, mxArray *
+  plhs[], int nrhs, const mxArray * prhs[] )
 {
   char commandName[64];
   char tpChksum[64];
@@ -234,8 +235,8 @@ unsigned int sf_testWtAsset_jit_fallback_info( int nlhs, mxArray * plhs[], int
   return 1;
 }
 
-unsigned int sf_testWtAsset_updateBuildInfo_args_info( int nlhs, mxArray * plhs[],
-  int nrhs, const mxArray * prhs[] )
+unsigned int sf_exampleOfWindPowerPlant_updateBuildInfo_args_info( int nlhs,
+  mxArray * plhs[], int nrhs, const mxArray * prhs[] )
 {
   char commandName[64];
   char tpChksum[64];
@@ -262,8 +263,8 @@ unsigned int sf_testWtAsset_updateBuildInfo_args_info( int nlhs, mxArray * plhs[
   return 1;
 }
 
-void sf_testWtAsset_get_post_codegen_info( int nlhs, mxArray * plhs[], int nrhs,
-  const mxArray * prhs[] )
+void sf_exampleOfWindPowerPlant_get_post_codegen_info( int nlhs, mxArray * plhs[],
+  int nrhs, const mxArray * prhs[] )
 {
   unsigned int chartFileNumber = (unsigned int) mxGetScalar(prhs[0]);
   char tpChksum[64];
@@ -277,33 +278,34 @@ void sf_testWtAsset_get_post_codegen_info( int nlhs, mxArray * plhs[], int nrhs,
   plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
 }
 
-void testWtAsset_debug_initialize(struct SfDebugInstanceStruct* debugInstance)
+void exampleOfWindPowerPlant_debug_initialize(struct SfDebugInstanceStruct*
+  debugInstance)
 {
-  _testWtAssetMachineNumber_ = sf_debug_initialize_machine(debugInstance,
-    "testWtAsset","sfun",0,0,0,0,0);
-  sf_debug_set_machine_event_thresholds(debugInstance,_testWtAssetMachineNumber_,
-    0,0);
-  sf_debug_set_machine_data_thresholds(debugInstance,_testWtAssetMachineNumber_,
-    0);
+  _exampleOfWindPowerPlantMachineNumber_ = sf_debug_initialize_machine
+    (debugInstance,"exampleOfWindPowerPlant","sfun",0,0,0,0,0);
+  sf_debug_set_machine_event_thresholds(debugInstance,
+    _exampleOfWindPowerPlantMachineNumber_,0,0);
+  sf_debug_set_machine_data_thresholds(debugInstance,
+    _exampleOfWindPowerPlantMachineNumber_,0);
 }
 
-void testWtAsset_register_exported_symbols(SimStruct* S)
+void exampleOfWindPowerPlant_register_exported_symbols(SimStruct* S)
 {
 }
 
 static mxArray* sRtwOptimizationInfoStruct= NULL;
-mxArray* load_testWtAsset_optimization_info(void)
+mxArray* load_exampleOfWindPowerPlant_optimization_info(void)
 {
   if (sRtwOptimizationInfoStruct==NULL) {
-    sRtwOptimizationInfoStruct = sf_load_rtw_optimization_info("testWtAsset",
-      "testWtAsset");
+    sRtwOptimizationInfoStruct = sf_load_rtw_optimization_info(
+      "exampleOfWindPowerPlant", "exampleOfWindPowerPlant");
     mexMakeArrayPersistent(sRtwOptimizationInfoStruct);
   }
 
   return(sRtwOptimizationInfoStruct);
 }
 
-void unload_testWtAsset_optimization_info(void)
+void unload_exampleOfWindPowerPlant_optimization_info(void)
 {
   if (sRtwOptimizationInfoStruct!=NULL) {
     mxDestroyArray(sRtwOptimizationInfoStruct);

@@ -1,4 +1,4 @@
-#include "testWtAsset_sfun.h"
+#include "exampleOfWindPowerPlant_sfun.h"
 #include "sf_runtime/sfcdebug.h"
 
 struct SfDebugInstanceStruct;
@@ -9,13 +9,13 @@ struct SfDebugInstanceStruct* sfGlobalDebugInstanceStruct = NULL;
 unsigned int sf_process_check_sum_call( int nlhs, mxArray * plhs[], int nrhs,
   const mxArray * prhs[] )
 {
-  extern unsigned int sf_testWtAsset_process_check_sum_call( int nlhs, mxArray *
-    plhs[], int nrhs, const mxArray * prhs[] );
-  extern unsigned int sf_DiSC_ToolboxOpal_V12_process_check_sum_call( int nlhs,
+  extern unsigned int sf_exampleOfWindPowerPlant_process_check_sum_call( int
+    nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern unsigned int sf_DiSC_ToolboxOpal_V11_process_check_sum_call( int nlhs,
     mxArray * plhs[], int nrhs, const mxArray * prhs[] );
-  if (sf_testWtAsset_process_check_sum_call(nlhs,plhs,nrhs,prhs))
+  if (sf_exampleOfWindPowerPlant_process_check_sum_call(nlhs,plhs,nrhs,prhs))
     return 1;
-  if (sf_DiSC_ToolboxOpal_V12_process_check_sum_call(nlhs,plhs,nrhs,prhs))
+  if (sf_DiSC_ToolboxOpal_V11_process_check_sum_call(nlhs,plhs,nrhs,prhs))
     return 1;
   return 0;
 }
@@ -23,9 +23,9 @@ unsigned int sf_process_check_sum_call( int nlhs, mxArray * plhs[], int nrhs,
 unsigned int sf_process_machine_uses_exported_functions_call( int nlhs, mxArray *
   plhs[], int nrhs, const mxArray * prhs[] )
 {
-  extern void sf_testWtAsset_uses_exported_functions( int nlhs, mxArray * plhs[],
-    int nrhs, const mxArray * prhs[] );
-  extern void sf_DiSC_ToolboxOpal_V12_uses_exported_functions( int nlhs, mxArray
+  extern void sf_exampleOfWindPowerPlant_uses_exported_functions( int nlhs,
+    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern void sf_DiSC_ToolboxOpal_V11_uses_exported_functions( int nlhs, mxArray
     * plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -45,13 +45,14 @@ unsigned int sf_process_machine_uses_exported_functions_call( int nlhs, mxArray 
 
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
-    sf_testWtAsset_uses_exported_functions(nlhs, plhs, nrhs-2, prhs+2);
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
+    sf_exampleOfWindPowerPlant_uses_exported_functions(nlhs, plhs, nrhs-2, prhs+
+      2);
     return 1;
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
-    sf_DiSC_ToolboxOpal_V12_uses_exported_functions(nlhs, plhs, nrhs-2, prhs+2);
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
+    sf_DiSC_ToolboxOpal_V11_uses_exported_functions(nlhs, plhs, nrhs-2, prhs+2);
     return 1;
   }
 
@@ -61,9 +62,9 @@ unsigned int sf_process_machine_uses_exported_functions_call( int nlhs, mxArray 
 unsigned int sf_process_autoinheritance_call( int nlhs, mxArray * plhs[], int
   nrhs, const mxArray * prhs[] )
 {
-  extern unsigned int sf_testWtAsset_autoinheritance_info( int nlhs, mxArray *
-    plhs[], int nrhs, const mxArray * prhs[] );
-  extern unsigned int sf_DiSC_ToolboxOpal_V12_autoinheritance_info( int nlhs,
+  extern unsigned int sf_exampleOfWindPowerPlant_autoinheritance_info( int nlhs,
+    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern unsigned int sf_DiSC_ToolboxOpal_V11_autoinheritance_info( int nlhs,
     mxArray * plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -79,22 +80,22 @@ unsigned int sf_process_autoinheritance_call( int nlhs, mxArray * plhs[], int
     return 0;
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_testWtAsset_autoinheritance_info(nlhs,plhs,3,newRhs);
+    return sf_exampleOfWindPowerPlant_autoinheritance_info(nlhs,plhs,3,newRhs);
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_DiSC_ToolboxOpal_V12_autoinheritance_info(nlhs,plhs,3,newRhs);
+    return sf_DiSC_ToolboxOpal_V11_autoinheritance_info(nlhs,plhs,3,newRhs);
   }
 
   return 0;
@@ -103,9 +104,9 @@ unsigned int sf_process_autoinheritance_call( int nlhs, mxArray * plhs[], int
 unsigned int sf_process_get_third_party_uses_info_call( int nlhs, mxArray *
   plhs[], int nrhs, const mxArray * prhs[] )
 {
-  extern unsigned int sf_testWtAsset_third_party_uses_info( int nlhs, mxArray *
-    plhs[], int nrhs, const mxArray * prhs[] );
-  extern unsigned int sf_DiSC_ToolboxOpal_V12_third_party_uses_info( int nlhs,
+  extern unsigned int sf_exampleOfWindPowerPlant_third_party_uses_info( int nlhs,
+    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern unsigned int sf_DiSC_ToolboxOpal_V11_third_party_uses_info( int nlhs,
     mxArray * plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -121,22 +122,22 @@ unsigned int sf_process_get_third_party_uses_info_call( int nlhs, mxArray *
     return 0;
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_testWtAsset_third_party_uses_info(nlhs,plhs,3,newRhs);
+    return sf_exampleOfWindPowerPlant_third_party_uses_info(nlhs,plhs,3,newRhs);
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_DiSC_ToolboxOpal_V12_third_party_uses_info(nlhs,plhs,3,newRhs);
+    return sf_DiSC_ToolboxOpal_V11_third_party_uses_info(nlhs,plhs,3,newRhs);
   }
 
   return 0;
@@ -145,9 +146,9 @@ unsigned int sf_process_get_third_party_uses_info_call( int nlhs, mxArray *
 unsigned int sf_process_get_jit_fallback_info_call( int nlhs, mxArray * plhs[],
   int nrhs, const mxArray * prhs[] )
 {
-  extern unsigned int sf_testWtAsset_jit_fallback_info( int nlhs, mxArray *
-    plhs[], int nrhs, const mxArray * prhs[] );
-  extern unsigned int sf_DiSC_ToolboxOpal_V12_jit_fallback_info( int nlhs,
+  extern unsigned int sf_exampleOfWindPowerPlant_jit_fallback_info( int nlhs,
+    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern unsigned int sf_DiSC_ToolboxOpal_V11_jit_fallback_info( int nlhs,
     mxArray * plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -163,22 +164,22 @@ unsigned int sf_process_get_jit_fallback_info_call( int nlhs, mxArray * plhs[],
     return 0;
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_testWtAsset_jit_fallback_info(nlhs,plhs,3,newRhs);
+    return sf_exampleOfWindPowerPlant_jit_fallback_info(nlhs,plhs,3,newRhs);
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_DiSC_ToolboxOpal_V12_jit_fallback_info(nlhs,plhs,3,newRhs);
+    return sf_DiSC_ToolboxOpal_V11_jit_fallback_info(nlhs,plhs,3,newRhs);
   }
 
   return 0;
@@ -187,9 +188,9 @@ unsigned int sf_process_get_jit_fallback_info_call( int nlhs, mxArray * plhs[],
 unsigned int sf_process_get_updateBuildInfo_args_info_call( int nlhs, mxArray *
   plhs[], int nrhs, const mxArray * prhs[] )
 {
-  extern unsigned int sf_testWtAsset_updateBuildInfo_args_info( int nlhs,
-    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
-  extern unsigned int sf_DiSC_ToolboxOpal_V12_updateBuildInfo_args_info( int
+  extern unsigned int sf_exampleOfWindPowerPlant_updateBuildInfo_args_info( int
+    nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern unsigned int sf_DiSC_ToolboxOpal_V11_updateBuildInfo_args_info( int
     nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -205,22 +206,23 @@ unsigned int sf_process_get_updateBuildInfo_args_info_call( int nlhs, mxArray *
     return 0;
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_testWtAsset_updateBuildInfo_args_info(nlhs,plhs,3,newRhs);
+    return sf_exampleOfWindPowerPlant_updateBuildInfo_args_info(nlhs,plhs,3,
+      newRhs);
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
     const mxArray *newRhs[3] = { NULL, NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
     newRhs[2] = prhs[3];
-    return sf_DiSC_ToolboxOpal_V12_updateBuildInfo_args_info(nlhs,plhs,3,newRhs);
+    return sf_DiSC_ToolboxOpal_V11_updateBuildInfo_args_info(nlhs,plhs,3,newRhs);
   }
 
   return 0;
@@ -229,9 +231,9 @@ unsigned int sf_process_get_updateBuildInfo_args_info_call( int nlhs, mxArray *
 unsigned int sf_process_get_eml_resolved_functions_info_call( int nlhs, mxArray *
   plhs[], int nrhs, const mxArray * prhs[] )
 {
-  extern unsigned int sf_testWtAsset_get_eml_resolved_functions_info( int nlhs,
-    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
-  extern unsigned int sf_DiSC_ToolboxOpal_V12_get_eml_resolved_functions_info
+  extern unsigned int sf_exampleOfWindPowerPlant_get_eml_resolved_functions_info
+    ( int nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern unsigned int sf_DiSC_ToolboxOpal_V11_get_eml_resolved_functions_info
     ( int nlhs, mxArray * plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -247,20 +249,21 @@ unsigned int sf_process_get_eml_resolved_functions_info_call( int nlhs, mxArray 
     return 0;
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
     const mxArray *newRhs[2] = { NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
-    return sf_testWtAsset_get_eml_resolved_functions_info(nlhs,plhs,2,newRhs);
+    return sf_exampleOfWindPowerPlant_get_eml_resolved_functions_info(nlhs,plhs,
+      2,newRhs);
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
     const mxArray *newRhs[2] = { NULL, NULL };
 
     newRhs[0] = prhs[0];
     newRhs[1] = prhs[2];
-    return sf_DiSC_ToolboxOpal_V12_get_eml_resolved_functions_info(nlhs,plhs,2,
+    return sf_DiSC_ToolboxOpal_V11_get_eml_resolved_functions_info(nlhs,plhs,2,
       newRhs);
   }
 
@@ -270,9 +273,9 @@ unsigned int sf_process_get_eml_resolved_functions_info_call( int nlhs, mxArray 
 unsigned int sf_process_get_post_codegen_info(int nlhs, mxArray * plhs[], int
   nrhs, const mxArray * prhs[])
 {
-  extern void sf_testWtAsset_get_post_codegen_info( int nlhs, mxArray * plhs[],
-    int nrhs, const mxArray * prhs[] );
-  extern void sf_DiSC_ToolboxOpal_V12_get_post_codegen_info( int nlhs, mxArray *
+  extern void sf_exampleOfWindPowerPlant_get_post_codegen_info( int nlhs,
+    mxArray * plhs[], int nrhs, const mxArray * prhs[] );
+  extern void sf_DiSC_ToolboxOpal_V11_get_post_codegen_info( int nlhs, mxArray *
     plhs[], int nrhs, const mxArray * prhs[] );
   char commandName[64];
   char machineName[128];
@@ -292,13 +295,13 @@ unsigned int sf_process_get_post_codegen_info(int nlhs, mxArray * plhs[], int
 
   mxGetString(prhs[1], machineName,sizeof(machineName)/sizeof(char));
   machineName[(sizeof(machineName)/sizeof(char)-1)] = '\0';
-  if (strcmp(machineName, "testWtAsset") == 0) {
-    sf_testWtAsset_get_post_codegen_info(nlhs, plhs, nrhs-2, prhs+2);
+  if (strcmp(machineName, "exampleOfWindPowerPlant") == 0) {
+    sf_exampleOfWindPowerPlant_get_post_codegen_info(nlhs, plhs, nrhs-2, prhs+2);
     return 1;
   }
 
-  if (strcmp(machineName, "DiSC_ToolboxOpal_V12") == 0) {
-    sf_DiSC_ToolboxOpal_V12_get_post_codegen_info(nlhs, plhs, nrhs-2, prhs+2);
+  if (strcmp(machineName, "DiSC_ToolboxOpal_V11") == 0) {
+    sf_DiSC_ToolboxOpal_V11_get_post_codegen_info(nlhs, plhs, nrhs-2, prhs+2);
     return 1;
   }
 
@@ -363,35 +366,35 @@ unsigned int sf_machine_global_initializer_called(void)
   return(sfGlobalMdlStartCallCounts > 0);
 }
 
-extern unsigned int sf_testWtAsset_method_dispatcher(SimStruct *S, unsigned int
-  chartFileNumber, const char* specsCksum, int_T method, void *data);
-extern unsigned int sf_DiSC_ToolboxOpal_V12_method_dispatcher(SimStruct *S,
+extern unsigned int sf_exampleOfWindPowerPlant_method_dispatcher(SimStruct *S,
+  unsigned int chartFileNumber, const char* specsCksum, int_T method, void *data);
+extern unsigned int sf_DiSC_ToolboxOpal_V11_method_dispatcher(SimStruct *S,
   unsigned int chartFileNumber, const char* specsCksum, int_T method, void *data);
 unsigned int sf_machine_global_method_dispatcher(SimStruct *simstructPtr, const
   char *machineName, unsigned int chartFileNumber, const char* specsCksum, int_T
   method, void *data)
 {
-  if (!strcmp(machineName,"testWtAsset")) {
-    return(sf_testWtAsset_method_dispatcher(simstructPtr,chartFileNumber,
-            specsCksum,method,data));
+  if (!strcmp(machineName,"exampleOfWindPowerPlant")) {
+    return(sf_exampleOfWindPowerPlant_method_dispatcher(simstructPtr,
+            chartFileNumber,specsCksum,method,data));
   }
 
-  if (!strcmp(machineName,"DiSC_ToolboxOpal_V12")) {
-    return(sf_DiSC_ToolboxOpal_V12_method_dispatcher(simstructPtr,
+  if (!strcmp(machineName,"DiSC_ToolboxOpal_V11")) {
+    return(sf_DiSC_ToolboxOpal_V11_method_dispatcher(simstructPtr,
             chartFileNumber,specsCksum,method,data));
   }
 
   return 0;
 }
 
-extern void testWtAsset_terminator(void);
-extern void DiSC_ToolboxOpal_V12_terminator(void);
+extern void exampleOfWindPowerPlant_terminator(void);
+extern void DiSC_ToolboxOpal_V11_terminator(void);
 void sf_machine_global_terminator(void)
 {
   sfGlobalMdlStartCallCounts--;
   if (sfGlobalMdlStartCallCounts == 0) {
-    testWtAsset_terminator();
-    DiSC_ToolboxOpal_V12_terminator();
+    exampleOfWindPowerPlant_terminator();
+    DiSC_ToolboxOpal_V11_terminator();
     sf_debug_terminate(sfGlobalDebugInstanceStruct);
     sfGlobalDebugInstanceStruct = NULL;
   }
@@ -399,16 +402,17 @@ void sf_machine_global_terminator(void)
   return;
 }
 
-extern void testWtAsset_initializer(void);
-extern void DiSC_ToolboxOpal_V12_initializer(void);
-extern void testWtAsset_register_exported_symbols(SimStruct* S);
-extern void DiSC_ToolboxOpal_V12_register_exported_symbols(SimStruct* S);
-extern void testWtAsset_debug_initialize(struct SfDebugInstanceStruct*);
-extern void DiSC_ToolboxOpal_V12_debug_initialize(struct SfDebugInstanceStruct*);
+extern void exampleOfWindPowerPlant_initializer(void);
+extern void DiSC_ToolboxOpal_V11_initializer(void);
+extern void exampleOfWindPowerPlant_register_exported_symbols(SimStruct* S);
+extern void DiSC_ToolboxOpal_V11_register_exported_symbols(SimStruct* S);
+extern void exampleOfWindPowerPlant_debug_initialize(struct
+  SfDebugInstanceStruct*);
+extern void DiSC_ToolboxOpal_V11_debug_initialize(struct SfDebugInstanceStruct*);
 void sf_register_machine_exported_symbols(SimStruct* S)
 {
-  testWtAsset_register_exported_symbols(S);
-  DiSC_ToolboxOpal_V12_register_exported_symbols(S);
+  exampleOfWindPowerPlant_register_exported_symbols(S);
+  DiSC_ToolboxOpal_V11_register_exported_symbols(S);
 }
 
 bool callCustomFcn(char initFlag)
@@ -427,15 +431,15 @@ void sf_machine_global_initializer(SimStruct* S)
 
     sfGlobalDebugInstanceStruct = sf_debug_create_debug_instance_struct();
     if (!simModeIsRTWGen) {
-      testWtAsset_debug_initialize(sfGlobalDebugInstanceStruct);
+      exampleOfWindPowerPlant_debug_initialize(sfGlobalDebugInstanceStruct);
     }
 
-    testWtAsset_initializer();
+    exampleOfWindPowerPlant_initializer();
     if (!simModeIsRTWGen) {
-      DiSC_ToolboxOpal_V12_debug_initialize(sfGlobalDebugInstanceStruct);
+      DiSC_ToolboxOpal_V11_debug_initialize(sfGlobalDebugInstanceStruct);
     }
 
-    DiSC_ToolboxOpal_V12_initializer();
+    DiSC_ToolboxOpal_V11_initializer();
   }
 
   return;
